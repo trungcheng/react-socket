@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 
-const socketUrl = "http://192.168.31.191:3200";
+// const socketUrl = "http://192.168.31.191:3000";
+const socketUrl = "http:///172.22.23.4:3000";
 
 export default class Layout extends Component {
 
@@ -16,7 +17,7 @@ export default class Layout extends Component {
         this.initSocket();
     }
 
-    initSocket = () => {
+    initSocket() {
         const socket = io(socketUrl);
         socket.on('connect', () => {
             console.log('connected');
